@@ -1,0 +1,12 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url("../../recursos/img/descarga.jpg");
+
+}
+
+h1{
+    margin-top: 15%;
+    text-align: center;
+    color: white;
+}

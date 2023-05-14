@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../recursos/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/loader.css">
+    <title>Comparativa de laboratorios</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="e-tabs mb-3 px-3"></div>
+                <div class="e-panel card">
+                    <div class="card-body">
+                        <div class="card-title">
+                            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                                <div class="container-fluid">
+                                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#navMenuUsuario" aria-controls="navMenuUsuario"
+                                        aria-expanded="false" aria-label="Toggle navigation">
+                                        <span class="navbar-toggler-icon"></span>
+                                    </button>
+                                    <div class="collapse navbar-collapse" id="navMenuUsuario">
+                                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                            <!-- aqui va el menu por usuario -->
+                                        </ul>
+                                        <form class="d-flex" id="formBuscador">
+                                            <input class="form-control me-2" type="search" id="buscador"
+                                                placeholder="Search" required aria-label="Search">
+                                            <button class="btn btn-outline-success" id="btnBuscar"
+                                                type="submit">Search</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+
+                        <!-- 
+                        <div class="accordion mb-3" id="accordionExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Configuracion
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <form class="form">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="row pt-2 pb-2">
+                                                        <div class="col">
+                                                            <div class="form-group">
+                                                                <label>Historia</label>
+                                                                <input class="form-control" disabled type="text"
+                                                                    name="historiapx" id="historiapx">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="form-group">
+                                                                <label>Apellidos</label>
+                                                                <input class="form-control" disabled type="text"
+                                                                    name="apellidopx" id="apellidopx">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="form-group">
+                                                                <label>Nombre</label>
+                                                                <input class="form-control" disabled type="text"
+                                                                    name="nombrepx" id="nombrepx">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row pt-2 pb-2">
+                                                        <div class="col">
+                                                            <div class="form-group">
+                                                                <label>Genero</label>
+                                                                <input class="form-control" disabled type="text"
+                                                                    name="generopx" id="generopx">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="form-group">
+                                                                <label>Edad</label>
+                                                                <input class="form-control" disabled type="text"
+                                                                    name="edadpx" id="edadpx">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="form-group">
+                                                                <label>Fecha de nacimiento</label>
+                                                                <input class="form-control" disabled type="text"
+                                                                    name="nacimientopx" id="nacimientopx">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row pt-2 pb-2">
+                                                        <div class="col">
+                                                            <div class="form-group">
+                                                                <label>Servicio</label>
+                                                                <input class="form-control" disabled type="text"
+                                                                    name="serviciopx" id="serviciopx">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="form-group">
+                                                                <label>Cama</label>
+                                                                <input class="form-control" disabled type="text"
+                                                                    name="camapx" id="camapx">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="form-group">
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+
+                        <div class="">
+                            <button type="button" class="btn btn-outline-primary" type="button" data-bs-toggle="modal"
+                                data-bs-target="#modalConfigLabs">Configuracion</button>
+                        </div>
+
+                        <form class="form">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="row pt-2 pb-2">
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label>Fecha</label>
+                                                <input class="form-control" disabled type="date" readonly name="fecha"
+                                                    id="fecha">
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label>Area</label>
+                                                <select class="form-select" id="area">
+                                                    <!-- areas del hospital -->
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label>Servicio</label>
+                                                <select class="form-select" id="servicio">
+                                                    <option selected value="utia">UTIA</option>
+                                                    <option value="utim">UTIM</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </form>
+
+                        <div id="tblDatos">
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Tipo de Graficas -->
+    <div class="modal fade" role="dialog" tabindex="-1" id="modalConfigLabs">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Configuracion de laboratorios</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="py-1">
+                        <form class="form" id="formConfigLabs">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="row pt-2 pb-2">
+                                        <div class="col">
+                                            <ul class="list-group" id="lsExamenes">
+                                                <!-- lista de examenes a mostrar en el modal de configuracion -->
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row pt-5">
+                                <div class="col d-flex justify-content-end">
+                                    <button type="submit" class="btn btn-outline-success" id="btnGuardarConfig">
+                                        Guardar
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../recursos/jquery.js"></script>
+    <script src="../../recursos/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../recursos/chartjs.min.js"></script>
+    <script src="../../js/common.js?v=280120222016"></script>
+
+    <script src="../../js/pages/laboratorios/comparativa.js?v=280120222016"></script>
+</body>
+
+</html>

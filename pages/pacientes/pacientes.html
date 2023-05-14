@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../recursos/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/loader.css">
+    <title>Control de pacientes</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row flex-lg-nowrap">
+            <!-- <div class="col-12 col-lg-auto mb-3" style="width: 200px;">
+                <div class="card p-3">
+                    <div class="e-navlist e-navlist--active-bg">
+                        <ul class="nav">
+                            <li class="nav-item"><a class="nav-link px-2 active" href="#"><i
+                                        class="fa fa-fw fa-bar-chart mr-1"></i><span>Overview</span></a></li>
+                            <li class="nav-item"><a class="nav-link px-2"
+                                    href="https://www.bootdey.com/snippets/view/bs4-crud-users" target="__blank"><i
+                                        class="fa fa-fw fa-th mr-1"></i><span>CRUD</span></a></li>
+                            <li class="nav-item"><a class="nav-link px-2"
+                                    href="https://www.bootdey.com/snippets/view/bs4-edit-profile-page"
+                                    target="__blank"><i class="fa fa-fw fa-cog mr-1"></i><span>Settings</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="col">
+                <div class="e-tabs mb-3 px-3">
+                    <!-- <ul class="nav nav-tabs">
+                        <li class="nav-item"><a class="nav-link active" href="#">Usuarios</a></li>
+                    </ul> -->
+                </div>
+
+                <div class="row flex-lg-nowrap">
+                    <div class="col mb-3">
+                        <div class="e-panel card">
+                            <div class="card-body">
+                                <div class="card-title">
+                                    <!-- <h6 class="mr-2">
+                                        <span>Usarios</span>
+                                        <small class="px-1">Configuraci&oacute;n</small>
+                                    </h6> -->
+                                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                                        <div class="container-fluid">
+                                            <!-- <a class="navbar-brand" href="#">Configuracion de usuarios</a> -->
+                                            <div class="text-center px-xl-3">
+                                                <button class="btn btn-success btn-block launch-modal" type="button"
+                                                    data-bs-toggle="modal" data-bs-target="#user-form-modal"
+                                                    id="btnAgregarUsuario">
+                                                    Nuevo Paciente
+                                                </button>
+                                            </div>
+                                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#navMenuUsuario" aria-controls="navMenuUsuario"
+                                                aria-expanded="false" aria-label="Toggle navigation">
+                                                <span class="navbar-toggler-icon"></span>
+                                            </button>
+                                            <div class="collapse navbar-collapse" id="navMenuUsuario">
+                                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                                    <li class="nav-item">
+                                                        <!-- <a class="nav-link" href="../enconstruccion.html">Roles de
+                                                            usuario</a>
+                                                         <div class="text-center px-xl-3">
+                                                            <button class="btn btn-success btn-block launch-modal"
+                                                                type="button" data-bs-toggle="modal"
+                                                                data-bs-target="#user-form-modal">New User</button>
+                                                        </div> -->
+                                                    </li>
+                                                    <!-- <li class="nav-item">
+                                                        <a class="nav-link" href="../enconstruccion.html">Menu</a>
+                                                    </li> -->
+                                                </ul>
+                                                <form class="d-flex" id="formBuscador">
+                                                    <input class="form-control me-2" type="search" id="buscador"
+                                                        placeholder="Search" required aria-label="Search">
+                                                    <button class="btn btn-outline-success" id="btnBuscar"
+                                                        type="submit">Search</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </nav>
+                                </div>
+                                <div class="e-table">
+                                    <div class="table-responsive table-lg mt-3">
+                                        <!-- tabla de usuarios -->
+                                        <table class="table table-bordered" id="tblPacientes">
+                                            <thead>
+                                                <!-- <tr>
+                                                    <th class="sortable">Nombre</th>
+                                                    <th class="sortable">Apellido</th>
+                                                    <th class="sortable">Sexo</th>
+                                                    <th class="sortable">Fecha Nacimiento</th>
+                                                    <th>Acciones</th>
+                                                </tr> -->
+                                            </thead>
+                                            <tbody></tbody>
+                                        </table>
+                                    </div>
+                                    <!-- paginacion -->
+                                    <div class="d-flex justify-content-center">
+                                        <div class="alert alert-light" id="dataCounter" role="alert"></div>
+                                        <!-- <ul class="pagination mt-3 mb-0">
+                                            <li class="disabled page-item"><a href="#" class="page-link">‹</a></li>
+                                            <li class="active page-item"><a href="#" class="page-link">1</a></li>
+                                            <li class="page-item"><a href="#" class="page-link">2</a></li>
+                                            <li class="page-item"><a href="#" class="page-link">3</a></li>
+                                            <li class="page-item"><a href="#" class="page-link">4</a></li>
+                                            <li class="page-item"><a href="#" class="page-link">5</a></li>
+                                            <li class="page-item"><a href="#" class="page-link">›</a></li>
+                                            <li class="page-item"><a href="#" class="page-link">»</a></li>
+                                        </ul> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- agregar nuevo usuario -->
+                    <!-- <div class="col-12 col-lg-3 mb-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="text-center px-xl-3">
+                                    <button class="btn btn-success btn-block launch-modal" type="button"
+                                        data-bs-toggle="modal" data-bs-target="#user-form-modal">New User</button>
+                                </div>
+                                <hr class="my-3">
+                                <div class="e-navlist e-navlist--active-bold">
+                                    <ul class="nav">
+                                        <li class="nav-item active"><a href=""
+                                                class="nav-link"><span>All</span>&nbsp;<small>/&nbsp;32</small></a></li>
+                                        <li class="nav-item"><a href=""
+                                                class="nav-link"><span>Active</span>&nbsp;<small>/&nbsp;16</small></a>
+                                        </li>
+                                        <li class="nav-item"><a href=""
+                                                class="nav-link"><span>Selected</span>&nbsp;<small>/&nbsp;0</small></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <hr class="my-3">
+                                <div>
+                                    <div class="form-group">
+                                        <label>Date from - to:</label>
+                                        <div>
+                                            <input id="dates-range" class="form-control flatpickr-input"
+                                                placeholder="01 Dec 17 - 27 Jan 18" type="text" readonly="readonly">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Search by Name:</label>
+                                        <div><input class="form-control w-100" type="text" placeholder="Name" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="my-3">
+                                <div class="">
+                                    <label>Status:</label>
+                                    <div class="px-2">
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" class="custom-control-input" name="user-status"
+                                                id="users-status-disabled">
+                                            <label class="custom-control-label"
+                                                for="users-status-disabled">Disabled</label>
+                                        </div>
+                                    </div>
+                                    <div class="px-2">
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" class="custom-control-input" name="user-status"
+                                                id="users-status-active">
+                                            <label class="custom-control-label" for="users-status-active">Active</label>
+                                        </div>
+                                    </div>
+                                    <div class="px-2">
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" class="custom-control-input" name="user-status"
+                                                id="users-status-any" checked="">
+                                            <label class="custom-control-label" for="users-status-any">Any</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+
+                <!-- User Form Modal -->
+                <div class="modal fade" role="dialog" tabindex="-1" id="user-form-modal">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Crear un nuevo paciente</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="py-1">
+                                    <form class="form" id="formPacientes" method="post">
+                                        <div class="row">
+                                            <div class="col">
+
+                                                <div class="row pt-2 pb-2">
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label>Nombres</label>
+                                                            <input class="form-control" type="text" id="nombreUsuario"
+                                                                name="nombreUsuario" placeholder="Nombres del paciente"
+                                                                required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label>Apellidos</label>
+                                                            <input class="form-control" type="text" id="apellidoUsuario"
+                                                                name="apellidoUsuario"
+                                                                placeholder="Apellidos del paciente" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label>Fecha de nacimiento</label>
+                                                            <input class="form-control" type="date" id="fechaNacimiento"
+                                                                name="fechaNacimiento" required>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row pt-2 pb-2">
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label>Peso (Kg)</label>
+                                                            <input class="form-control" type="number" id="pesoUsuario"
+                                                                name="pesoUsuario" min="0" step="0.01"
+                                                                placeholder="Ingresa el peso del paciente en Kg."
+                                                                required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label>Talla (cm)</label>
+                                                            <input class="form-control" type="number" id="tallaUsuario"
+                                                                name="tallaUsuario" min="0"
+                                                                placeholder="Ingresa la talla del paciente en cm"
+                                                                required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label>Sexo</label>
+                                                            <select class="form-select" id="dropSexo" required>
+                                                                <option value="">Selecciona el genero</option>
+                                                                <option value="M">Masculino</option>
+                                                                <option value="F">Femenino</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row pt-2 pb-2">
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label>Tel&eacute;fono</label>
+                                                            <input class="form-control" type="tel" id="telefonoPaciente"
+                                                                name="telefonoPaciente" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label>Fecha de ingreso</label>
+                                                            <input class="form-control" type="date" id="fechaIngreso"
+                                                                name="fechaIngreso" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label>Fecha de intubacion</label>
+                                                            <input class="form-control" type="date" id="fechaIntubacion"
+                                                                name="fechaIntubacion" required>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="row pt-5">
+                                            <div class="col d-flex justify-content-end">
+                                                <button class="btn btn-primary" type="submit">Guardar cambios</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /User Form Modal -->
+                <!-- alerta borrar usuario -->
+                <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop"
+                    aria-labelledby="offcanvasTopLabel">
+                    <div class="offcanvas-header">
+                        <h5 id="offcanvasTopLabel">Eliminar usuario</h5>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div class="alert alert-warning" role="alert">
+                            Estas a punto de eliminar al usuario
+                            <strong id="EliminarPaciente">nombre de usuario a eliminar</strong>
+                            ¿Deseas continuar?
+                            <div>
+                                <button type="button" class="btn btn-secondary"
+                                    data-bs-dismiss="offcanvas">Cancelar</button>
+                                <button type="button" class="btn btn-primary"
+                                    id="confirmEliminarPaciente">Eliminar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /alerta borrar usuario -->
+            </div>
+        </div>
+    </div>
+    <script src="../../recursos/jquery.js"></script>
+    <script src="../../recursos/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../js/common.js?v=280120222016"></script>
+    <script src="../../js/pages/pacientes/pacientes.js?v=280120222016"></script>
+</body>
+
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../recursos/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/loader.css">
+    <title>Control de laboratorios</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row flex-lg-nowrap">
+            <div class="col">
+                <div class="e-tabs mb-3 px-3">
+                
+                </div>
+                <div class="row flex-lg-nowrap">
+                    <div class="col mb-3">
+                        <div class="e-panel card">
+                            <div class="card-body">
+                                <div class="card-title">
+                                    <!-- <h6 class="mr-2">
+                                        <span>Usarios</span>
+                                        <small class="px-1">Configuraci&oacute;n</small>
+                                    </h6> -->
+                                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                                        <div class="container-fluid">
+                                            <!-- <a class="navbar-brand" href="#">Configuracion de usuarios</a> -->
+                                            <div class="text-center px-xl-3">
+                                                <button class="btn btn-success btn-block launch-modal" type="button"
+                                                    data-bs-toggle="modal" data-bs-target="#user-form-modal">
+                                                    Cargar Laboratorio
+                                                </button>
+                                            </div>
+                                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#navMenuUsuario" aria-controls="navMenuUsuario"
+                                                aria-expanded="false" aria-label="Toggle navigation">
+                                                <span class="navbar-toggler-icon"></span>
+                                            </button>
+                                            <div class="collapse navbar-collapse" id="navMenuUsuario">
+                                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                                    <!-- aqui va el menu por usuario -->
+                                                </ul>
+                                                <form class="d-flex" id="formBuscador">
+                                                    <input class="form-control me-2" type="search" id="buscador"
+                                                        placeholder="Search" required aria-label="Search">
+                                                    <button class="btn btn-outline-success" id="btnBuscar"
+                                                        type="submit">Search</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </nav>
+                                </div>
+                                <div class="e-table">
+                                    <div class="table-responsive table-lg mt-3">
+                                        <!-- tabla de usuarios -->
+                                        <table class="table table-bordered" id="tblLaboratorios">
+                                            <thead></thead>
+                                            <tbody></tbody>
+                                        </table>
+                                    </div>
+                                    <!-- paginacion -->
+                                    <div class="d-flex justify-content-center">
+                                        <div class="alert alert-light" id="dataCounter" role="alert"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- User Form Modal -->
+                <div class="modal fade" role="dialog" tabindex="-1" id="user-form-modal">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Cargar laboratorio</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="py-1">
+                                    <form class="form" id="formCargaLaboratorios" method="post">
+                                        <div class="row">
+                                            <div class="col">
+
+                                                <div class="row pt-2 pb-2">
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label>Paciente</label>
+                                                            <select class="form-select" id="paciente"></select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row pt-2 pb-2">
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label>Servicio</label>
+                                                            <!-- <input class="form-control" type="text" id="habitacion"
+                                                                name="habitacion" placeholder="Habitacion del paciente"
+                                                                required> -->
+                                                            <select class="form-select" id="servicio" >
+                                                                <option value="utia">UTIA</option>
+                                                                <option value="utim">UTIM</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label>Cama</label>
+                                                            <input class="form-control" type="number" id="cama" min="0"
+                                                                name="cama" placeholder="Cama del paciente" required>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row pt-2 pb-2">
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label>Fecha de laboratorio</label>
+                                                            <input class="form-control" type="date"
+                                                                id="fechaLaboratorio" name="fechaLaboratorio" required>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row pt-2 pb-2">
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <input type="file" id="file" required>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="row pt-5">
+                                            <div class="col d-flex justify-content-end">
+                                                <!-- <button class="btn btn-primary" type="submit">Guardar cambios</button> -->
+                                                <button type="submit" class="btn btn-primary" id="btnCargaDatos">Cargar
+                                                    Datos</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /User Form Modal -->
+                <!-- alerta borrar usuario -->
+                <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop"
+                    aria-labelledby="offcanvasTopLabel">
+                    <div class="offcanvas-header">
+                        <h5 id="offcanvasTopLabel">Eliminar usuario</h5>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div class="alert alert-warning" role="alert">
+                            Estas a punto de eliminar al usuario
+                            <strong id="EliminarUsuario">nombre de usuario a eliminar</strong>
+                            ¿Deseas continuar?
+                            <div>
+                                <button type="button" class="btn btn-secondary"
+                                    data-bs-dismiss="offcanvas">Cancelar</button>
+                                <button type="button" class="btn btn-primary"
+                                    id="confirmEliminarUsuario">Eliminar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /alerta borrar usuario -->
+            </div>
+        </div>
+    </div>
+    <script src="../../recursos/jquery.js"></script>
+    <script src="../../recursos/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../js/common.js?v=280120222016"></script>
+    <script type="text/javascript" src='../../recursos/xlsx.full.min.js'></script>
+    <script src="../../js/pages/laboratorios/laboratorios.js?v=280120222016"></script>
+</body>
+
+</html>

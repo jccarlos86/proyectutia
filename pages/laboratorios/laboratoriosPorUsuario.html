@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../recursos/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/loader.css">
+    <title>Control de laboratorios</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="e-tabs mb-3 px-3"></div>
+                <div class="e-panel card">
+                    <div class="card-body">
+                        <div class="card-title">
+                            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                                <div class="container-fluid">
+                                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#navMenuUsuario" aria-controls="navMenuUsuario"
+                                        aria-expanded="false" aria-label="Toggle navigation">
+                                        <span class="navbar-toggler-icon"></span>
+                                    </button>
+                                    <div class="collapse navbar-collapse" id="navMenuUsuario">
+                                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                            <!-- aqui va el menu por usuario -->
+                                        </ul>
+                                        <form class="d-flex" id="formBuscador">
+                                            <input class="form-control me-2" type="search" id="buscador"
+                                                placeholder="Search" required aria-label="Search">
+                                            <button class="btn btn-outline-success" id="btnBuscar"
+                                                type="submit">Search</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+
+                        <div class="accordion mb-3" id="accordionExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Datos del paciente
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <form class="form">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="row pt-2 pb-2">
+                                                        <div class="col">
+                                                            <div class="form-group">
+                                                                <label>Historia</label>
+                                                                <input class="form-control" disabled type="text"
+                                                                    name="historiapx" id="historiapx">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="form-group">
+                                                                <label>Apellidos</label>
+                                                                <input class="form-control" disabled type="text"
+                                                                    name="apellidopx" id="apellidopx">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="form-group">
+                                                                <label>Nombre</label>
+                                                                <input class="form-control" disabled type="text"
+                                                                    name="nombrepx" id="nombrepx">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row pt-2 pb-2">
+                                                        <div class="col">
+                                                            <div class="form-group">
+                                                                <label>Genero</label>
+                                                                <input class="form-control" disabled type="text"
+                                                                    name="generopx" id="generopx">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="form-group">
+                                                                <label>Edad</label>
+                                                                <input class="form-control" disabled type="text"
+                                                                    name="edadpx" id="edadpx">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="form-group">
+                                                                <label>Fecha de nacimiento</label>
+                                                                <input class="form-control" disabled type="text"
+                                                                    name="nacimientopx" id="nacimientopx">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row pt-2 pb-2">
+                                                        <div class="col">
+                                                            <div class="form-group">
+                                                                <label>Servicio</label>
+                                                                <input class="form-control" disabled type="text"
+                                                                    name="serviciopx" id="serviciopx">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="form-group">
+                                                                <label>Cama</label>
+                                                                <input class="form-control" disabled type="text"
+                                                                    name="camapx" id="camapx">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="form-group">
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <nav>
+                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                    <a class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" href="#nav-home"
+                                        role="tab" aria-controls="nav-home" aria-selected="true">Laboratorios</a>
+                                    <a class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" href="#nav-profile"
+                                        role="tab" aria-controls="nav-profile" aria-selected="false">Graficas</a>
+                                </div>
+                            </nav>
+
+                            <div class="tab-content" id="nav-tabContent">
+                                <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
+                                    aria-labelledby="nav-home-tab">
+                                    <div class="table-responsive table-lg mt-3">
+                                        <!-- tabla con acordeon -->
+                                        <div class="accordion" id="accordionExample1">
+                                            <!-- AQUI VA LA DATA -->
+                                        </div>
+
+                                        <!-- tabla de laboratorios -->
+                                        <table class="table table-bordered" id="tblLaboratoriosUsuario">
+                                            <thead></thead>
+                                            <tbody></tbody>
+                                        </table>
+                                    </div>
+                                    <!-- paginacion -->
+                                    <div class="d-flex justify-content-center">
+                                        <div class="alert alert-light" id="dataCounter" role="alert"></div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="nav-profile" role="tabpanel"
+                                    aria-labelledby="nav-profile-tab">
+                                    <div class="row">
+                                        <div class="col-sm-12 pt-2 pb-2">
+                                            <button id="btnChartSettings" type="button"
+                                                class="btn btn-primary btn-block launch-modal" type="button"
+                                                data-bs-toggle="modal" data-bs-target="#modalVisorGraficas">
+                                                <svg class="bi bi-gear-fill" width="1em" height="1em"
+                                                    viewBox="0 0 16 16" fill="currentColor"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd"
+                                                        d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 0 0-5.86 2.929 2.929 0 0 0 0 5.858z" />
+                                                </svg>
+                                            </button>
+
+                                            <button id="btnChart" type="button"
+                                                class="btn btn-primary btn-block launch-modal" type="button"
+                                                data-bs-toggle="modal" data-bs-target="#modalGrafica">
+                                                <span>Create chart</span>
+                                            </button>
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div id="cardGraficas" class="row row-cols-1 row-cols-md-3 g-2">
+                                                <!-- aqui se agregan las graficas -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Tipo de Graficas -->
+    <div class="modal fade" role="dialog" tabindex="-1" id="modalGrafica">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Nueva Grafica</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="py-1">
+                        <form class="form" id="formGrafica" method="post">
+                            <div class="row">
+                                <div class="col">
+
+                                    <div class="row pt-2 pb-2">
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label>Desde</label>
+                                                <input class="form-control" type="date" id="fechaDesde"
+                                                    name="fechaDesde" required>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label>Hasta</label>
+                                                <input class="form-control" type="date" id="fechaHasta"
+                                                    name="fechaHasta" required>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row pt-2 pb-2">
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label>Estudio</label>
+                                                <select class="form-select" id="estudio" required></select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row pt-2 pb-2">
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label>Titulo de la grafica</label>
+                                                <input class="form-control" type="text" id="tituloGrafica"
+                                                    name="tituloGrafica" required>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row pt-2 pb-2">
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label>Tipo de grafica</label>
+                                                <select class="form-select" id="tipoGrafica" required>
+                                                    <option selected value="line">Linea</option>
+                                                    <option value="bar">Barras</option>
+                                                    <option value="radar">Radar</option>
+                                                    <option value="doughnut">Dona</option>
+                                                    <option value="pie">Pay</option>
+                                                    <option value="polarArea">Polar</option>
+                                                    <option value="bubble">Burbujas</option>
+                                                    <option value="scatter">Dispersion</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row pt-5">
+                                <div class="col d-flex justify-content-end">
+                                    <button type="submit" class="btn btn-outline-success" id="btnCrearGrafica">Crear
+                                        Grafica
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal alerta borrar grafica-->
+    <div class="modal fade" id="modalBorrarGrafica" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalBorrarGraficaTitle">Delete chart</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to delete this chart?<br>
+                    <span id="nombreGrafica" class="text-danger"></span>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="eliminarGrafica">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Tipo de Graficas -->
+    <div class="modal fade" role="dialog" tabindex="-1" id="modalVisorGraficas">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Visor de graficas</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="py-1">
+                        <form class="form">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="row pt-2 pb-2">
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label>Graficas por linea</label>
+                                                <select class="form-select" id="graficasporlinea">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option selected value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row pt-5">
+                                <div class="col d-flex justify-content-end">
+                                    <!-- <button type="submit" class="btn btn-outline-success" id="btnCrearGrafica">Crear
+                                        Grafica
+                                    </button> -->
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../recursos/jquery.js"></script>
+    <script src="../../recursos/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../js/common.js?v=280120222016"></script>
+    <script src="../../js/pages/laboratorios/laboratoriosPorUsuario.js?v=280120222016"></script>
+    <script src="../../recursos/chartjs.min.js"></script>
+    <script src="../../js/pages/laboratorios/graficas.js?v=280120222016"></script>
+</body>
+
+</html>
